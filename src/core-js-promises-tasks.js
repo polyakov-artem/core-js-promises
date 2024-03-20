@@ -147,9 +147,9 @@ function queuPromises(promises) {
   });
 
   promises.forEach((promise) => {
-    startPromise = startPromise.then((prevResult) =>
-      {debugger; return promise.then((curResult) => prevResult + curResult)}
-    );
+    startPromise = startPromise.then((prevResult) => {
+      return promise.then((curResult) => prevResult + curResult);
+    });
   });
 
   return startPromise.then((result) => result);
